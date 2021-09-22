@@ -2,7 +2,7 @@
     <!--default-->
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
 
-    <string name="app_name">TabletReservation</string>
+    <string name="app_name">말해보시개회의실태블릿</string>
     <string name="bottom_nav1_text">회의실</string>
     <string name="bottom_nav2_text">예약관리</string>
     <string name="bottom_nav3_text">프로필</string>
