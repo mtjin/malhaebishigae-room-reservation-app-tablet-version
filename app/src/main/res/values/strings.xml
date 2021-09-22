@@ -90,4 +90,5 @@
     <string name="input_end_time_text">종료기간을 입력해주세요</string>
     <string name="question_reservation_text">예약하시겠습니까?</string>
     <string name="qr_code_camera_request_text">QR 코드 촬영 재요청</string>
+    <string name="question_developer_text">문의 : tmddjs210@naver.com</string>
 </resources>
