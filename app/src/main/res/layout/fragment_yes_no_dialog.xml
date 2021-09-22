@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_radius_16dp"
+    android:elevation="@dimen/elevation_4dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_150dp"
+        android:gravity="center"
+        android:padding="@dimen/padding_8dp"
+        android:text="@string/question_reservation_text"
+        android:textColor="@color/colorWhiteGrayA3A3A3"
+        android:textSize="@dimen/text_size_28sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_1dp"
+        android:background="@color/colorWhiteGrayF4F4F4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_80dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/padding_8dp"
+            android:text="@string/no_text"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhiteGrayF4F4F4" />
+
+        <TextView
+            android:id="@+id/tv_yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/padding_8dp"
+            android:text="@string/yes_text"
+            android:textColor="@color/colorBlue"
+            android:textSize="@dimen/text_size_20sp" />
+    </LinearLayout>
+</LinearLayout>

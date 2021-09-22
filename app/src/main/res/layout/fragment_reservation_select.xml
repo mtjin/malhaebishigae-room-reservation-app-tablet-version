@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.mtjin.free_room_tablet.views.reservation_select.ReservationSelectViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_white_blue">
+
+        <TextView
+            android:id="@+id/text_reservation_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_reservation_text"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/iv_qr_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_qr_code"
+            android:layout_width="@dimen/size_200dp"
+            android:layout_height="200dp"
+            android:onClick="@{()->vm.goQrCodeReservation()}"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_anonymous"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_qr_code" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_qr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:text="@string/qr_code_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_32sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_qr_code"
+            app:layout_constraintStart_toStartOf="@id/iv_qr_code"
+            app:layout_constraintTop_toBottomOf="@id/iv_qr_code" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_anonymous"
+            android:layout_width="@dimen/size_200dp"
+            android:layout_height="@dimen/size_200dp"
+            android:onClick="@{()->vm.goAnonymousReservation()}"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_qr_code"
+            app:layout_constraintEnd_toStartOf="@id/iv_login"
+            app:layout_constraintStart_toEndOf="@id/iv_qr_code"
+            app:layout_constraintTop_toTopOf="@+id/iv_qr_code"
+            app:srcCompat="@drawable/ic_anonymous" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_anonymous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:text="@string/anonymous_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_32sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_anonymous"
+            app:layout_constraintStart_toStartOf="@id/iv_anonymous"
+            app:layout_constraintTop_toBottomOf="@id/iv_anonymous" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_login"
+            android:layout_width="@dimen/size_200dp"
+            android:layout_height="@dimen/size_200dp"
+            android:onClick="@{()->vm.goLoginReservation()}"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_qr_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_anonymous"
+            app:layout_constraintTop_toTopOf="@id/iv_qr_code"
+            app:srcCompat="@drawable/ic_login" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:text="@string/login_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_32sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_login"
+            app:layout_constraintStart_toStartOf="@id/iv_login"
+            app:layout_constraintTop_toBottomOf="@id/iv_login" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.mtjin.free_room_tablet.views.reservation_info.ReservationInfoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteGrayF4F4F4">
+
+
+        <TextView
+            android:id="@+id/text2_status"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:gravity="center"
+            android:text="@string/status_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_time"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/view_divide_4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_divide_1"
+            android:layout_width="@dimen/width_2dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_time"
+            app:layout_constraintStart_toEndOf="@id/text2_status"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <TextView
+            android:id="@+id/text2_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:gravity="center"
+            android:text="@string/time_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_content"
+            app:layout_constraintStart_toEndOf="@id/text2_status"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <View
+            android:id="@+id/view_divide_2"
+            android:layout_width="@dimen/width_2dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_content"
+            app:layout_constraintStart_toEndOf="@id/text2_time"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <TextView
+            android:id="@+id/text2_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:gravity="center"
+            android:text="@string/conference_name_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_register"
+            app:layout_constraintStart_toEndOf="@id/text2_time"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <View
+            android:id="@+id/view_divide_3"
+            android:layout_width="@dimen/width_2dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toStartOf="@id/text2_register"
+            app:layout_constraintStart_toEndOf="@id/text2_content"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <TextView
+            android:id="@+id/text2_register"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:gravity="center"
+            android:text="@string/register2_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/text2_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text2_content"
+            app:layout_constraintTop_toTopOf="@id/text2_status" />
+
+        <View
+            android:id="@+id/view_divide_4"
+            android:layout_width="@dimen/width_2dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="@id/gl_vertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_reservations"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_divide_4"
+            app:layout_constraintTop_toBottomOf="@id/text2_status"
+            bind:setItems="@{vm.reservationList}"
+            tools:listitem="@layout/item_reservation_info" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_white_blue"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/text_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:roomEmptyEndTimestamp="@{vm.currentRoomEndTimestamp}"
+            bind:roomEmptyStartTimestamp="@{vm.currentRoomStartTimestamp}"
+            tools:text="회의중" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_content"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_60dp"
+            android:background="@drawable/bg_white_mint"
+            android:gravity="center"
+            android:text="@string/conference_name_text"
+            android:textSize="@dimen/text_size_24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center"
+            android:text="@{vm.conferenceName}"
+            android:textSize="@dimen/text_size_24sp"
+            app:layout_constraintBottom_toTopOf="@id/text_register"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_content"
+            tools:text="모바일 개발 주간회의" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_60dp"
+            android:background="@drawable/bg_white_mint"
+            android:gravity="center"
+            android:text="@string/register2_text"
+            android:textSize="@dimen/text_size_24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_register"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_register"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center"
+            android:text="@{vm.register}"
+            android:textSize="@dimen/text_size_24sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_reserve"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_register"
+            tools:text="유재석" />
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/btn_reserve"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:gravity="center"
+            android:onClick="@{()->vm.goReservation()}"
+            android:text="@string/reserve_text"
+            android:textSize="28sp"
+            app:button_duration="200"
+            app:button_scale="0.9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="@{vm.isLoading() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.mtjin.free_room_tablet.views.main.ReservationSharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_white_blue">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_48dp"
+            android:text="@string/step_2_start_time_select_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/text_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:text="@string/date_input_text"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/text_start_time"
+            app:layout_constraintStart_toStartOf="@id/tv_step"
+            app:layout_constraintTop_toBottomOf="@id/tv_step" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            android:text="@{vm.date}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_date"
+            app:layout_constraintStart_toEndOf="@id/text_date"
+            app:layout_constraintTop_toTopOf="@id/text_date"
+            tools:text="2020-09-12" />
+
+        <TextView
+            android:id="@+id/text_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:text="@string/start_time_input_text"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/text_end_time"
+            app:layout_constraintStart_toStartOf="@id/tv_step"
+            app:layout_constraintTop_toBottomOf="@id/text_date" />
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            android:text="@{vm.startTime}"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_start_time"
+            app:layout_constraintStart_toEndOf="@id/text_start_time"
+            app:layout_constraintTop_toTopOf="@id/text_start_time"
+            tools:text="12:00" />
+
+        <TextView
+            android:id="@+id/text_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:text="@string/end_time_input_text"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/gl_horizontal"
+            app:layout_constraintStart_toStartOf="@id/tv_step"
+            app:layout_constraintTop_toBottomOf="@id/text_start_time" />
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            android:text="@{vm.endTime}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_end_time"
+            app:layout_constraintStart_toEndOf="@id/text_end_time"
+            app:layout_constraintTop_toTopOf="@id/text_end_time"
+            tools:text="14:00" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_start_time_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_time_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/tp_start_time_picker"
+            app:layout_constraintEnd_toEndOf="@id/tp_start_time_picker"
+            app:layout_constraintStart_toStartOf="@id/tp_start_time_picker"
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TimePicker
+            android:id="@+id/tp_start_time_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_32dp"
+            android:theme="@style/DatePickerTheme"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tp_end_time_picker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_start_time_select" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_end_time_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_time_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/tp_end_time_picker"
+            app:layout_constraintEnd_toEndOf="@id/tp_end_time_picker"
+            app:layout_constraintStart_toStartOf="@id/tp_end_time_picker"
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <TimePicker
+            android:id="@+id/tp_end_time_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_32dp"
+            android:theme="@style/DatePickerTheme"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gl_vertical"
+            app:layout_constraintStart_toEndOf="@id/tp_start_time_picker"
+            app:layout_constraintTop_toBottomOf="@id/tv_end_time_select" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_reservation_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_28dp"
+            android:gravity="center"
+            android:text="@string/reserved_time_text"
+            android:textSize="@dimen/text_size_32sp"
+            app:layout_constraintBottom_toTopOf="@id/rv_times"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_vertical"
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_times"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:layout_marginBottom="@dimen/margin_28dp"
+            android:background="@color/colorWhiteBlue"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_reservation_time"
+            app:layout_constraintStart_toStartOf="@id/tv_reservation_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_reservation_time"
+            bind:setItems="@{vm.reservationList}"
+            tools:listitem="@layout/item_resrvation_available" />
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhiteBlue00E2FF"
+            android:onClick="@{()->vm.goReservation()}"
+            android:text="@string/next_text"
+            android:textSize="@dimen/text_size_36sp"
+            app:button_duration="200"
+            app:button_scale="0.9"
+            app:layout_constraintBottom_toBottomOf="@id/text_end_time"
+            app:layout_constraintEnd_toEndOf="@id/rv_times"
+            app:layout_constraintStart_toStartOf="@id/rv_times"
+            app:layout_constraintTop_toTopOf="@id/tv_step" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

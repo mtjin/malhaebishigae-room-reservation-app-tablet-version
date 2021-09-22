@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_nav_graph"
+    app:startDestination="@id/top_fragment">
+    <fragment
+        android:id="@+id/top_fragment"
+        android:name="com.mtjin.free_room_tablet.views.top.TopFragment"
+        android:label="TopFragment"
+        tools:layout="@layout/fragment_top" />
+</navigation>
