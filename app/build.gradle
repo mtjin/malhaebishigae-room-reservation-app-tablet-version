@@ -19,8 +19,8 @@ android {
         applicationId "com.mtjin.free_room_tablet"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.02"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
