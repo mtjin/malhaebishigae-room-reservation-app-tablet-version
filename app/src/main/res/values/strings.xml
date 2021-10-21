@@ -47,8 +47,8 @@
     <string name="register2_text">담당자</string>
     <string name="empty_text">비었음</string>
     <string name="input_business_code_room_code_text">부여받은 회사코드와 회의실 코드를 입력해주세요</string>
-    <string name="business_code_text">회사코드</string>
-    <string name="room_code_text">회의실코드</string>
+    <string name="business_code_text">BUSINESS_CODE_EXAMPLE</string>
+    <string name="room_code_text">1~7</string>
     <string name="enter_text">입장</string>
     <string name="enter_business_code_text">회사코드를 입력해주세요</string>
     <string name="enter_meeting_room_code_text">회의실 코드를 입력해주세요</string>
